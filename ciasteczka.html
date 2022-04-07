@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="znikaj()">
+    <div id="cst">Kliknij przycisk zeby zaakceptowac
+    <button  onclick="yes()" id="btn">akceptuje</button>
+    </div>
+    
+    <script>
+        function yes(){ 
+            let btn = document.getElementById("cst") 
+            btn.style.display = "none";
+            document.cookie = "cookieAccept: true"
+             window.alert("Cookies zostaly zaakceptowane")
+
+            }
+        function znikaj(){
+            if(document.cookie == "cookieAccept: true"){
+                document.getElementById("cst").style.display = "none";               
+            }
+            else
+                document.getElementById("cst").style.visibility = "block";
+
+            
+        }
+    </script>
+
+    
+    
+</body>
+</html>
